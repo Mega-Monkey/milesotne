@@ -1,0 +1,17 @@
+.page-home {
+  margin-bottom: 370px;
+
+  @media screen and (max-width: 991px) {
+    margin-bottom: 165px;
+  }
+  h1,
+  h2,
+  h3,
+  h4 {
+    margin-bottom: 0 !important;
+  }
+}
+
+.section {
+  margin-bottom: 100px;
+}

@@ -1,0 +1,19 @@
+<div class="container page-blog">
+  <app-content-page-title [titleObject]="titleObject"></app-content-page-title>
+  <ng-container *ngIf="articles">
+    <div class="row">
+      <ng-container *ngFor="let article of articles">
+        <div *ngIf="article.title && article.body && article.mobileImage" class="col-12 col-lg-6">
+          <app-article-excerpt
+            [article]="article"
+            [routerLink]="['/article/', article.slug.current]"
+            routerLinkActive="router-link-active"
+          ></app-article-excerpt>
+        </div>
+      </ng-container>
+    </div>
+    <div *ngIf="articles.length > 10">
+      <button class="btn btn-primary">Load more</button>
+    </div>
+  </ng-container>
+</div>

@@ -1,0 +1,22 @@
+<div class="container-fluid home-cta" *ngIf="content">
+  <div class="row">
+    <div class="col-12 text-center">
+      <div>
+        <h2 class="mb-5">{{ content.title }}</h2>
+      </div>
+      <div class="mb-5">
+        {{ content.subtitle }}
+      </div>
+      <div>
+        <div>
+          <a [routerLink]="content.buttonLeftDestination" routerLinkActive="router-link-active" class="btn btn-white mr-5">
+            {{ content.buttonLeftText }}
+          </a>
+          <a [routerLink]="content.buttonRightDestination" routerLinkActive="router-link-active" class="btn btn-white">
+            {{ content.buttonRightText }}
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

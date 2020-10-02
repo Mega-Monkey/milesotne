@@ -1,0 +1,14 @@
+<div class="container" *ngIf="content">
+	<div class="row">
+		<div class="col-10 mx-auto">
+			<div class="row">
+				<div *ngFor="let usp of content.usps" class="col-12 col-lg">
+					<div class="d-flex align-items-center mb-3 mb-lg-0">
+						<img [src]="usp.icon" alt="" class="icon mr-3 mr-lg-5" />
+						<div class="text">{{ usp.text }}</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

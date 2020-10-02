@@ -1,0 +1,17 @@
+@media screen and (min-width: 768px) {
+}
+
+@media screen and (max-width: 768px) {
+  .min-50 {
+    min-height: 15vh;
+  }
+  img {
+    max-width: 50%;
+    margin: 50px auto 0;
+  }
+}
+@media screen and (min-width: 768px) {
+  img {
+    max-height: 60%;
+  }
+}

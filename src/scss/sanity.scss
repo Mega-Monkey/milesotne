@@ -1,0 +1,14 @@
+.page-article {
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  code {
+    font-family: monospace !important;
+    font-size: 14px;
+    * {
+      font-family: monospace !important;
+    }
+  }
+}

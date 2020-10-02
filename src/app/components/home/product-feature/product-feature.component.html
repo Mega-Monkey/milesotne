@@ -1,0 +1,23 @@
+<div class="container-fluid">
+	<div class="row" *ngIf="content">
+		<div class="col-12 col-md-5 d-flex flex-column justify-content-center order-1" [ngClass]="{ 'order-md-0 offset-md-1': content.alignTextRight }">
+			<div class="text-center" [ngClass]="{ ' ml-md-auto pr-md-5': content.alignTextRight, ' mr-md-auto pl-md-5': !content.alignTextRight }">
+				<!-- <div class="mb-3">
+          <h3>{{ content.title }}</h3>
+        </div> -->
+				<div class="my-auto product-feature content" [innerHtml]="content.subtitle"></div>
+			</div>
+		</div>
+		<div class="col-12 col-md-5 flex-column justify-content-center d-flex order-0" [ngClass]="{ 'order-md-1': content.alignTextRight, 'offset-md-1': !content.alignTextRight }">
+			<ng-container [ngSwitch]="content.localAsset">
+				<ani-pippa-checklist class="w-100 h-auto d-block" *ngSwitchCase="'pip.svg'"></ani-pippa-checklist>
+				<ani-bob-modi class="w-100 h-auto d-block" *ngSwitchCase="'modi-bob.svg'"></ani-bob-modi>
+				<ani-piggy-bank class="w-100 h-auto d-block" *ngSwitchCase="'piggy.svg'"></ani-piggy-bank>
+				<ani-coins class="w-100 h-auto d-block" *ngSwitchCase="'dolla.svg'"></ani-coins>
+				<ng-container *ngSwitchDefault>
+					<img *ngIf="content.localAsset && !content.image" src="assets/{{ content.localAsset }}" alt="" class="w-100 h-auto" />
+				</ng-container>
+			</ng-container>
+		</div>
+	</div>
+</div>

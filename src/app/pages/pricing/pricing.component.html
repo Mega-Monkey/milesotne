@@ -1,0 +1,11 @@
+<div class="page-home py-3 py-lg-5">
+  <ng-container *ngIf="pagePricing">
+    <div *ngFor="let block of pagePricing.blocks" [ngSwitch]="block._type" class="section">
+      <app-hero-banner-pricing *ngSwitchCase="'heroBannerPricing'" [block]="block"></app-hero-banner-pricing>
+      <app-clients *ngSwitchCase="'clientsPricing'" [block]="block"></app-clients>
+      <app-faqs *ngSwitchCase="'faqsPricing'" [block]="block"></app-faqs>
+      <app-usps *ngSwitchCase="'uspsPricing'" [block]="block"></app-usps>
+      <div *ngSwitchDefault></div>
+    </div>
+  </ng-container>
+</div>

@@ -1,0 +1,32 @@
+<ng-container *ngIf="homepage">
+	<ng-container *ngFor="let block of homepage.blocks" [ngSwitch]="block._type">
+		<app-stages *ngSwitchCase="'heroBanner'" [block]="block"></app-stages>
+
+		<app-start-saving *ngSwitchCase="'heroBanner'"></app-start-saving>
+
+		<app-hero-text-with-image *ngSwitchCase="'heroTextWithImageCarousel'" [block]="block"></app-hero-text-with-image>
+
+		<app-product-feature *ngSwitchCase="'productFeature'" [block]="block"></app-product-feature>
+
+		<app-product-feature-list *ngSwitchCase="'productFeatureList'" [block]="block"></app-product-feature-list>
+
+		<app-steps *ngSwitchCase="'steps'" [block]="block"></app-steps>
+
+		<app-product-feature-carousel *ngSwitchCase="'productFeatureCarousel'" [block]="block"></app-product-feature-carousel>
+
+		<app-list-blogs *ngSwitchCase="'listBlogs'" [block]="block"></app-list-blogs>
+
+		<app-testimonial-carousel *ngSwitchCase="'testimonials'" [block]="block"></app-testimonial-carousel>
+
+		<app-home-call-to-action *ngSwitchCase="'callToAction'" [block]="block"></app-home-call-to-action>
+
+		<app-pick-your-plan *ngSwitchCase="'heroBanner'"></app-pick-your-plan>
+
+		<div *ngSwitchDefault></div>
+	</ng-container>
+</ng-container>
+
+<!-- this was the product feature list -->
+<!-- <app-hero-usps></app-hero-usps>  -->
+<app-call-to-action></app-call-to-action>
+<!-- <app-blog-slider></app-blog-slider> -->

@@ -1,0 +1,45 @@
+<div class="container">
+  <div class="row">
+    <div class="col-12">
+      <ng-container *ngIf="content && content.articles">
+        <ngx-light-carousel style="margin-bottom: 100px;" [options]="options" [data]="content.articles" class="wrapper c-accent">
+          <section ngx-light-carousel-container class="">
+            <article
+              class="cursor-pointer article-card p-3 mx-2"
+              ngx-light-carousel-item
+              *ngFor="let article of content.articles; let i = index"
+            >
+              <div class="d-flex flex-column">
+                <div>
+                  <img class="preview-image" [src]="article.mobileImage ? article.mobileImage : article.mainImage" />
+                </div>
+                <div *ngIf="article.categories" class="categories mb-3">{{ article.categories[0] }}</div>
+                <div *ngIf="!article.categories" class="categories mb-3">&nbsp;</div>
+                <div>
+                  <h3 class="article-title mb-5">
+                    {{ article.title }}
+                  </h3>
+                </div>
+                <div class="link">
+                  <a [routerLink]="article.slug" routerLinkActive="router-link-active">Learn more</a>
+                </div>
+              </div>
+            </article>
+            <ng-template #infiniteContainer></ng-template>
+          </section>
+
+          <ng-template #carouselPrev>
+            <div class="click-area"></div>
+          </ng-template>
+          <ng-template #carouselNext>
+            <div class="click-area"></div>
+          </ng-template>
+
+          <ng-template #carouselDot let-model>
+            <div class="ball bg-accent"></div>
+          </ng-template>
+        </ngx-light-carousel>
+      </ng-container>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,93 @@
+<header class="relative">
+	<div class="container-fluid container-lg py-3">
+		<div class="row">
+			<div class="col-6 col-md-4">
+				<a class="navbar-brand text-left" routerLink=""> MilestonePay </a>
+			</div>
+			<div class="d-none d-md-flex col-4">
+				<nav class="mx-auto">
+					<ul class="navbar-nav flex-row">
+						<li class="nav-item">
+							<a [ngClass]="{ 'text-white': invert }" class="nav-link" [routerLink]="['/getting-started']" routerLinkActive="active">Get Started</a>
+						</li>
+						<li class="nav-item">
+							<a [ngClass]="{ 'text-white': invert }" class="nav-link" [routerLink]="['/pricing']" routerLinkActive="active">Pricing</a>
+						</li>
+						<li class="nav-item dropdown">
+							<a [ngClass]="{ 'text-white': invert }" class="nav-link dropdown-toggle z-up" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" (click)="_this = true; clickInside($event)"> Company </a>
+							<div class="dropdown-menu" [ngClass]="{ 'active show': _this }" aria-labelledby="navbarDropdown">
+								<a class="dropdown-item" [routerLink]="['/about/us']" routerLinkActive="active">About MilestonePay</a>
+								<a class="dropdown-item" [routerLink]="['/about/team']" routerLinkActive="active">Our Team</a>
+								<a class="dropdown-item" [routerLink]="['/about/jobs']" routerLinkActive="active">Jobs @ MP</a>
+								<!-- <a class="dropdown-item" [routerLink]="['/blog']" routerLinkActive="active">Blog</a> -->
+							</div>
+						</li>
+					</ul>
+				</nav>
+			</div>
+			<div class="d-none d-md-flex col-4 text-right">
+				<a [ngClass]="{ 'text-white': invert }" class="btn ml-auto mr-3" href="https://app.milestonepay.com/login">Log In</a>
+				<a class="btn btn-secondary px-4 py-2" href="https://app.milestonepay.com/signup">Sign Up</a>
+			</div>
+			<div class="col-6 d-md-none text-right d-flex flex-column justify-content-center align-content-end">
+				<svg *ngIf="!menuOpen" (click)="showMenu()" width="17" height="12" class="ml-auto" viewBox="0 0 17 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+					<path d="M0 1H16.4286" stroke="#333" stroke-width="2" />
+					<path d="M0 6H16.4286" stroke="#333" stroke-width="2" />
+					<path d="M0 11H16.4286" stroke="#333" stroke-width="2" />
+				</svg>
+
+				<svg (click)="hideMenu()" *ngIf="menuOpen" width="14" height="14" viewBox="0 0 14 14" fill="none" class="ml-auto" xmlns="http://www.w3.org/2000/svg">
+					<path d="M1 12.6168L12.6168 1.00001" stroke="#333" stroke-width="2" />
+					<path d="M1.40625 1.19162L13.023 12.8084" stroke="#333" stroke-width="2" />
+				</svg>
+			</div>
+		</div>
+	</div>
+</header>
+
+<div class="min-100">
+	<router-outlet></router-outlet>
+</div>
+<div class="overflow-hidden">
+	<app-footer></app-footer>
+</div>
+<div [ngClass]="{ 'sidebar-active': menuOpen }" #menu class="sidebar p-5">
+	<div class="list-group mt-5">
+		<a [routerLink]="['getting-started']" (click)="hideMenu()" class="list-item">
+			<div class="d-flex flex-row justify-content-between">
+				<div class="title">Get Started</div>
+				<div>
+					<svg width="28" height="20" viewBox="0 0 28 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+						<path d="M0 10L26 10" stroke="white" stroke-width="1.5" />
+						<path d="M17.3461 0.999999L26 10L17.3461 19" stroke="white" stroke-width="1.5" />
+					</svg>
+				</div>
+			</div>
+			<div class="subtitle">Welcome to MilestonePay, the best way to make sure you’re paid.</div>
+		</a>
+		<a [routerLink]="['pricing']" (click)="hideMenu()" class="list-item">
+			<div class="d-flex flex-row justify-content-between">
+				<div class="title">Pricing</div>
+				<div>
+					<svg width="28" height="20" viewBox="0 0 28 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+						<path d="M0 10L26 10" stroke="white" stroke-width="1.5" />
+						<path d="M17.3461 0.999999L26 10L17.3461 19" stroke="white" stroke-width="1.5" />
+					</svg>
+				</div>
+			</div>
+			<div class="subtitle">Welcome to MilestonePay, the best way to make sure you’re paid.</div>
+		</a>
+		<a [routerLink]="['about/us']" (click)="hideMenu()" class="list-item">
+			<div class="d-flex flex-row justify-content-between">
+				<div class="title">About Us</div>
+				<div>
+					<svg width="28" height="20" viewBox="0 0 28 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+						<path d="M0 10L26 10" stroke="white" stroke-width="1.5" />
+						<path d="M17.3461 0.999999L26 10L17.3461 19" stroke="white" stroke-width="1.5" />
+					</svg>
+				</div>
+			</div>
+			<div class="subtitle">Welcome to MilestonePay, the best way to make sure you’re paid.</div>
+		</a>
+	</div>
+</div>

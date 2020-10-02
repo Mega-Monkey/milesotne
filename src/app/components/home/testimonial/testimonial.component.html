@@ -1,0 +1,11 @@
+<div *ngIf="testimonial" class="block-testimonial">
+  <div class="text-center">
+    <h3>{{ testimonial.title }}</h3>
+    <div *ngIf="content" class="content" [innerHtml]="content"></div>
+    <div *ngIf="testimonial.portrait" class="mb-2">
+      <img [src]="testimonial.portrait" alt="" class="portrait" />
+    </div>
+    <div class="name">{{ testimonial.name }}</div>
+    <div class="position">{{ testimonial.position }}</div>
+  </div>
+</div>

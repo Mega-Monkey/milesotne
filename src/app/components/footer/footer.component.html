@@ -1,0 +1,101 @@
+<!-- <div class="d-flex flex-column Fill-11 pb-5 pt-5">
+  <div class="row text-center">
+    <div class="col color-white">
+      <a class="mx-3 text-white" href="https://twitter.com/MilestonePay"><i class="fas fa-hashtag"></i> MilestonePay</a>
+      <a class="mx-3 text-white" href="https://www.linkedin.com/company/18595912/"><i class="fab fa-linkedin-in"></i> MilestonePay</a>
+      <a class="mx-3 text-white" href="https://www.facebook.com/MilestonePay"><i class="fab fa-facebook-f"></i> MilestonePay</a>
+    </div>
+  </div>
+</div> -->
+
+<footer *ngIf="footer" class="container-fluid py-5">
+	<div class="container">
+		<div class="row mb-5 pb-5">
+			<div class="col-md-4 mb-5 pb-3 col-12">
+				<h2 class="mb-5">
+					Get paid for your work.<br />
+					Every time.
+				</h2>
+				<form #form="ngForm" (ngSubmit)="onSubmit(form)" novalidate [ngClass]="{ 'was-validated': fieldEmail.dirty }">
+					<div class="input-group input-outline input-group-lg">
+						<input type="email" #fieldEmail="ngModel" required name="email" email class="form-control" [ngModelOptions]="{ updateOn: 'blur' }" [(ngModel)]="email" placeholder="Your email address" aria-label="Get started in 2 minutes" />
+						<button tabindex="1" [disabled]="form.invalid && form.touched" class="btn btn-primary text-white" type="submit">Get Started</button>
+					</div>
+
+					<div *ngIf="!fieldEmail.errors" class="valid-feedback">Looks good!</div>
+					<div *ngIf="fieldEmail.errors?.required" class="invalid-feedback">Please enter an email</div>
+					<div *ngIf="fieldEmail.errors?.email" class="invalid-feedback">Please enter a valid email</div>
+				</form>
+			</div>
+			<div *ngFor="let column of footer.columns; let first = first" [ngClass]="{ 'offset-md-2': first }" class="col-4 col-md">
+				<div *ngIf="column.title" class="column-title">{{ column.title }}</div>
+				<ng-container *ngFor="let item of column.contents" [ngSwitch]="item._type">
+					<div *ngSwitchCase="'itemWithIcon'" class="d-flex align-items-center">
+						<img class="mr-1 icon" [src]="item.linkIcon" alt="" />
+						<a class="nav-link" *ngIf="!item.linkDestination.includes('https')" [routerLink]="item.linkDestination" routerLinkActive="router-link-active">{{ item.linkTitle }}</a>
+
+						<!-- <a class="nav-link" *ngIf="item.linkDestination.includes('https')" src="{{ item.linkDestination }}">{{ item.linkTitle }}</a> -->
+					</div>
+					<div *ngSwitchCase="'item'">
+						<a class="nav-link pl-0" *ngIf="!item.linkDestination.includes('https')" [routerLink]="item.linkDestination" routerLinkActive="router-link-active">{{ item.linkTitle }}</a>
+
+						<!-- <a class="nav-link pl-0" *ngIf="item.linkDestination.includes('https')" src="{{ item.linkDestination }}">{{ item.linkTitle }}</a> -->
+					</div>
+				</ng-container>
+			</div>
+
+			<div class="d-flex">
+				<a class="li-ic mr-3" role="button"><i class="fab fa-lg fa-linkedin-in"></i></a>
+
+				<a class="fb-ic mr-3" role="button"><i class="fab fa-lg fa-facebook-f"></i></a>
+
+				<a class="tw-ic mr-3" role="button"><i class="fab fa-lg fa-twitter"></i></a>
+
+				<a class="ins-ic mr-3" role="button"><i class="fab fa-lg fa-instagram"></i></a>
+			</div>
+		</div>
+		<div class="row mb-5">
+			<div class="col-12 text-md-right text-center">
+				<svg width="128" height="20" viewBox="0 0 128 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+					<path d="M13.9902 15.8304V5.1388L9.63353 15.8304H7.1762L2.81957 5.22751V15.8304H0V0.581543H3.8867L8.43587 11.5919L12.8806 0.581543H16.8978V15.8304H13.9902Z" fill="white" />
+					<path d="M20.2722 0C21.2545 0 22.0247 0.795137 22.0247 1.78413C22.0247 2.73041 21.2545 3.52555 20.2722 3.52555C19.3095 3.52555 18.5198 2.73041 18.5198 1.78413C18.5198 0.795137 19.3095 0 20.2722 0ZM18.8624 15.8305V5.25053H21.7048V15.8305H18.8624Z" fill="white" />
+					<path d="M23.8815 15.8304V0.259521H26.7239V15.8304H23.8815Z" fill="white" />
+					<path
+						d="M38.7496 12.7977C38.2144 14.6245 36.5501 16.1524 33.9655 16.1524C31.0806 16.1524 28.5385 14.066 28.5385 10.4977C28.5385 7.12002 31.0154 4.92847 33.7077 4.92847C36.9547 4.92847 38.8997 7.01488 38.8997 10.4123C38.8997 10.8197 38.8573 11.2501 38.8573 11.2928H31.3384C31.4037 12.6926 32.5785 13.7013 33.9883 13.7013C35.3133 13.7013 36.0377 13.0343 36.3804 12.088L38.7496 12.7977ZM36.103 9.33458C36.0606 8.27987 35.3785 7.24816 33.7534 7.24816C32.2783 7.24816 31.469 8.3653 31.4037 9.33458H36.103Z"
+						fill="white"
+					/>
+					<path
+						d="M42.6819 12.3444C42.7472 13.1822 43.3639 13.9577 44.604 13.9577C45.5439 13.9577 45.991 13.4615 45.991 12.903C45.991 12.4298 45.6712 12.0421 44.8586 11.8712L43.4684 11.5492C41.4385 11.0991 40.5215 9.87026 40.5215 8.38841C40.5215 6.49585 42.1891 4.92529 44.4507 4.92529C47.4399 4.92529 48.445 6.84085 48.5723 7.9777L46.1998 8.51655C46.115 7.89227 45.6646 7.09714 44.4702 7.09714C43.7229 7.09714 43.1257 7.54727 43.1257 8.15184C43.1257 8.6677 43.5108 8.98969 44.0884 9.09812L45.583 9.42012C47.6553 9.85054 48.7029 11.1188 48.7029 12.6664C48.7029 14.3881 47.3779 16.1492 44.6236 16.1492C41.4614 16.1492 40.3714 14.0858 40.2441 12.88L42.6819 12.3444Z"
+						fill="white"
+					/>
+					<path
+						d="M54.4954 5.24726H56.6101V7.78381H54.4954V12.2129C54.4954 13.1362 54.9229 13.4385 55.7355 13.4385C56.0782 13.4385 56.4633 13.3958 56.6101 13.3531V15.7188C56.3523 15.8272 55.84 15.9783 55.0078 15.9783C52.9584 15.9783 51.6759 14.7528 51.6759 12.7091V7.78381H49.7733V5.24726H50.3085C51.4181 5.24726 51.9304 4.51455 51.9304 3.56827V2.08643H54.4954V5.24726Z"
+						fill="white"
+					/>
+					<path
+						d="M69.148 10.5373C69.148 13.7835 66.7755 16.1492 63.6361 16.1492C60.4968 16.1492 58.1243 13.7835 58.1243 10.5373C58.1243 7.26799 60.4968 4.92529 63.6361 4.92529C66.7788 4.92529 69.148 7.26799 69.148 10.5373ZM66.3089 10.5373C66.3089 8.53627 65.0263 7.52756 63.6394 7.52756C62.2492 7.52756 60.9699 8.53955 60.9699 10.5373C60.9699 12.5152 62.2525 13.5469 63.6394 13.5469C65.0263 13.5502 66.3089 12.5382 66.3089 10.5373Z"
+						fill="white"
+					/>
+					<path
+						d="M73.3773 15.8304H70.5349V5.25047H73.2892V6.56147C73.9288 5.46404 75.1918 4.97119 76.3209 4.97119C78.9251 4.97119 80.1228 6.84404 80.1228 9.16373V15.8304H77.2803V9.65659C77.2803 8.47374 76.7027 7.55046 75.3354 7.55046C74.0953 7.55046 73.3708 8.51974 73.3708 9.7453V15.8304H73.3773Z"
+						fill="white"
+					/>
+					<path
+						d="M92.0048 12.7977C91.4696 14.6245 89.8052 16.1524 87.2206 16.1524C84.3358 16.1524 81.7969 14.066 81.7969 10.4977C81.7969 7.12002 84.2738 4.92847 86.9661 4.92847C90.2132 4.92847 92.1581 7.01488 92.1581 10.4123C92.1581 10.8197 92.1157 11.2501 92.1157 11.2928H84.5969C84.6621 12.6926 85.837 13.7013 87.2467 13.7013C88.5717 13.7013 89.2961 13.0343 89.6388 12.088L92.0048 12.7977ZM89.3582 9.33458C89.3157 8.27987 88.6337 7.24816 87.0085 7.24816C85.5335 7.24816 84.7241 8.3653 84.6589 9.33458H89.3582Z"
+						fill="white"
+					/>
+					<path
+						d="M97.5623 10.087V15.8304H94.6155V0.581543H100.277C103.267 0.581543 105.254 2.58253 105.254 5.33594C105.254 8.10906 103.267 10.0903 100.277 10.0903H97.5623V10.087ZM99.9087 7.52749C101.384 7.52749 102.281 6.66664 102.281 5.35565C102.281 4.00195 101.384 3.16081 99.9087 3.16081H97.5819V7.52749H99.9087Z"
+						fill="white"
+					/>
+					<path
+						d="M109.461 9.74212L112.045 9.3544C112.642 9.26898 112.835 8.96669 112.835 8.60198C112.835 7.84956 112.257 7.22528 111.063 7.22528C109.823 7.22528 109.141 8.02041 109.056 8.94698L106.537 8.40813C106.706 6.75214 108.224 4.92529 111.043 4.92529C114.375 4.92529 115.615 6.81785 115.615 8.94698V14.1515C115.615 14.7101 115.681 15.4625 115.743 15.8305H113.135C113.07 15.5512 113.028 14.9697 113.028 14.5622C112.492 15.4001 111.49 16.1328 109.931 16.1328C107.689 16.1328 106.321 14.6049 106.321 12.9489C106.321 11.0531 107.708 10.0017 109.461 9.74212ZM112.835 11.5492V11.0761L110.463 11.4408C109.735 11.5492 109.16 11.9567 109.16 12.7748C109.16 13.3991 109.608 14.0004 110.528 14.0004C111.725 14.0004 112.835 13.4188 112.835 11.5492Z"
+						fill="white"
+					/>
+					<path d="M118.389 19.9999L120.866 14.4931L116.402 5.2439H119.584L122.384 11.4374L124.968 5.2439H128L121.398 19.9967H118.389V19.9999Z" fill="white" />
+				</svg>
+			</div>
+		</div>
+		<p>© Copyright 2020 MilestonePay. All rights reserved. Various trademarks held by their respective owners.</p>
+	</div>
+</footer>

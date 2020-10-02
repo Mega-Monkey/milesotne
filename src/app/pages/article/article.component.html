@@ -1,0 +1,6 @@
+<div class="container page-article">
+  <app-content-page-title *ngIf="titleObject" [titleObject]="titleObject"></app-content-page-title>
+  <div class="row">
+    <div *ngIf="content" class="col-12 col-md-8 offset-md-2" [innerHtml]="content"></div>
+  </div>
+</div>

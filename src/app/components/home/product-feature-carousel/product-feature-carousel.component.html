@@ -1,0 +1,28 @@
+<div class="container-fluid py-3">
+  <ng-container *ngIf="content && content.slides">
+    <ngx-light-carousel style="margin-bottom: 100px;" [options]="options" [data]="content.slides" class="wrapper c-accent">
+      <ng-template #carouselContent let-product let-i="index">
+        <article class="cursor-pointer col-12" ngx-light-carousel-item *ngFor="let slide of content.slides; let i = index">
+          <app-product-feature [preparedBlock]="slide"></app-product-feature>
+        </article>
+      </ng-template>
+      <section ngx-light-carousel-container class="">
+        <article class="cursor-pointer col-12" ngx-light-carousel-item *ngFor="let slide of content.slides; let i = index">
+          <app-product-feature [preparedBlock]="slide"></app-product-feature>
+        </article>
+        <ng-template #infiniteContainer></ng-template>
+      </section>
+
+      <ng-template #carouselPrev>
+        <div class="click-area"></div>
+      </ng-template>
+      <ng-template #carouselNext>
+        <div class="click-area"></div>
+      </ng-template>
+
+      <ng-template #carouselDot let-model>
+        <div class="ball bg-accent"></div>
+      </ng-template>
+    </ngx-light-carousel>
+  </ng-container>
+</div>

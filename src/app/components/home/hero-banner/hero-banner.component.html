@@ -1,0 +1,21 @@
+<div class="container py-3" *ngIf="content">
+	<div class="row text-center">
+		<div class="col-12">
+			<h1>{{ content.titleLineOne }}</h1>
+		</div>
+		<div class="col-12">
+			<h2>{{ content.subtitle }}</h2>
+		</div>
+
+		<div class="col-12">
+			<form #form="ngForm" (ngSubmit)="submit(form)" class="needs-validation">
+				<div class="input-group mb-3 mx-auto">
+					<input required name="email" id="email" type="email" #email="ngModel" [(ngModel)]="contactForm.email" class="form-control" placeholder="Your email address" aria-label="Your email address" aria-describedby="submitButton" />
+					<div class="input-group-append">
+						<button id="submitButton" type="submit" class="btn btn-outline-secondary">Get started</button>
+					</div>
+				</div>
+			</form>
+		</div>
+	</div>
+</div>

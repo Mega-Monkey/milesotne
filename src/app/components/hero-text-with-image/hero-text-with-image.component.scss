@@ -1,0 +1,49 @@
+$primary: #f9644b !default;
+$secondary: #3cc0c6 !default;
+$info: #923c9e !default;
+$warning: #f9d438 !default;
+$dark: #14121c !default;
+.bg-layer {
+  background: $primary;
+}
+.orange {
+  background: $primary;
+}
+.teal {
+  background: $secondary;
+}
+.purple {
+  background: $info;
+}
+.yellow {
+  background: $warning;
+}
+@media screen and (max-width: 768px) {
+  .direction {
+    display: none !important;
+  }
+}
+.grey {
+  background: #f1f1f1;
+}
+@media screen and (max-width: 991px) {
+  .absolute-image {
+    width: 120%;
+    margin-top: 10%;
+    margin-bottom: 10%;
+    margin-left: -25%;
+    margin-right: -10%;
+  }
+}
+@media screen and (min-width: 991px) {
+  .absolute-image {
+    top: -10%;
+
+    width: 120%;
+    height: 120%;
+    position: absolute;
+    left: -10%;
+    bottom: -10%;
+    right: -10%;
+  }
+}

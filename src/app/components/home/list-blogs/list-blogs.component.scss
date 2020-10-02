@@ -1,0 +1,27 @@
+article {
+	background: #fafafa;
+}
+
+.article-card {
+}
+
+.preview-image {
+	width: auto;
+	height: 150px;
+	object-fit: contain;
+	max-width: 100%;
+}
+
+.categories {
+	font-size: 11px;
+}
+
+h3 {
+	font-size: 16px !important;
+}
+
+.link {
+	font-size: 12px;
+	font-weight: normal;
+	text-transform: uppercase;
+}

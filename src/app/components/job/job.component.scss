@@ -1,0 +1,33 @@
+.you-circle {
+  background-color: #374c4f;
+  color: #fff;
+  font-size: 5rem;
+  width: 160px;
+  height: 160px;
+  margin: 0 auto;
+  padding-top: 20px;
+}
+.max-w {
+  max-width: 780px;
+}
+h1 {
+  font-style: normal;
+  font-weight: 600 !important;
+  font-size: 35px !important;
+  line-height: 118.9%;
+  /* or 42px */
+
+  text-align: center;
+}
+img {
+  filter: saturate(0);
+}
+.z-up {
+  z-index: 99;
+}
+:host {
+  background: #f1f1f1;
+}
+.br-1 {
+  border-right: 1px solid #000;
+}

@@ -1,0 +1,23 @@
+.title {
+	&.column {
+		background-color: #fafafa;
+		border-radius: 4px;
+		h4 {
+			font-size: 20px;
+		}
+	}
+
+	&.list-group {
+		font-weight: bold;
+	}
+}
+
+.list-group {
+	background-color: #f5f5f5;
+	border-radius: 4px;
+}
+
+.secondary-active {
+	background: #923c9e;
+	border-color: #923c9e;
+}

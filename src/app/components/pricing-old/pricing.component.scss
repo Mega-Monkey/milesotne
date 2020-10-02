@@ -1,0 +1,48 @@
+.font-weight-light {
+  font-weight: 300 !important;
+}
+.bg-purple {
+  background: #8513ba;
+}
+.b-rad {
+  border-radius: 5px;
+}
+.list-unstyled li {
+  margin-bottom: 8px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid #fff;
+  padding-left: 1rem !important;
+}
+.price-text {
+  font-family: DM Sans;
+  font-style: normal;
+  font-weight: normal !important;
+  font-size: 31px !important ;
+  line-height: 118.9%;
+  /* or 37px */
+
+  text-align: center;
+
+  color: #ffffff;
+}
+.price-mute {
+  font-family: DM Sans;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 13px;
+  line-height: 227.9%;
+  /* identical to box height, or 30px */
+
+  text-align: center;
+
+  color: rgba(255, 255, 255, 0.5);
+}
+.z-up {
+  z-index: 99;
+}
+:host {
+  background: #f1f1f1;
+}
+.z-down {
+  z-index: -1;
+}

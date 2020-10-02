@@ -1,0 +1,25 @@
+<div class="container" *ngIf="content">
+  <div class="row mb-3 mb-lg-5">
+    <div class="col-12 text-center">
+      <h5>{{ content.title }}</h5>
+    </div>
+  </div>
+  <div class="row mb-3 mb-lg-5">
+    <div class="col-10 mx-auto">
+      <div class="row">
+        <div
+          *ngFor="let client of content.clients | slice: 0:5; let last = last"
+          class="col-6 col-lg mb-lg-0 text-center"
+          [ngClass]="{ 'col-12 mb-3': last, 'mb-5': !last }"
+        >
+          <img [src]="client.logo" alt="" class="icon" />
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row mb-3 mb-lg-5">
+    <div class="col-12 col-lg-4 mx-lg-auto text-center">
+      <button class="btn btn-lg btn-primary" (click)="openModal()">{{ content.buttonTitle }}</button>
+    </div>
+  </div>
+</div>

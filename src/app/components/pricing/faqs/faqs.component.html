@@ -1,0 +1,22 @@
+<div class="container" *ngIf="content">
+  <div class="row mb-3">
+    <div class="col-12 text-center">
+      <h2>{{ content.title }}</h2>
+    </div>
+  </div>
+  <div class="row justify-content-lg-between">
+    <div *ngFor="let faq of content.faqs" class="col-12 col-md-6 col-lg-5">
+      <div class="d-flex flex-column mb-5">
+        <div class="question mb-3">{{ faq.question }}</div>
+        <div class="answer">{{ faq.answer }}</div>
+      </div>
+    </div>
+  </div>
+  <div *ngIf="content.linkDestination || content.linkTitle" class="row mb-5">
+    <div class="col-12 text-center">
+      <button class="btn btn-primary" [routerLink]="content.linkDestination" routerLinkActive="router-link-active">
+        {{ content.linkTitle }}
+      </button>
+    </div>
+  </div>
+</div>

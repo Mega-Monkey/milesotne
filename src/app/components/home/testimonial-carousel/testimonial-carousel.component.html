@@ -1,0 +1,36 @@
+<div class="container-fluid py-3">
+  <ng-container *ngIf="content && content.testimonials">
+    <ngx-light-carousel style="margin-bottom: 100px;" [options]="options" [data]="content.testimonials" class="wrapper c-accent">
+      <!-- <ng-template #carouselContent let-product let-i="index">
+        <article
+          class="cursor-pointer col-6 mx-auto"
+          ngx-light-carousel-item
+          *ngFor="let testimonial of content.testimonials; let i = index"
+        >
+          <app-testimonial [testimonial]="testimonial"></app-testimonial>
+        </article>
+      </ng-template> -->
+      <section ngx-light-carousel-container class="">
+        <article
+          class="cursor-pointer col-6 mx-auto"
+          ngx-light-carousel-item
+          *ngFor="let testimonial of content.testimonials; let i = index"
+        >
+          <app-testimonial [testimonial]="testimonial"></app-testimonial>
+        </article>
+        <ng-template #infiniteContainer></ng-template>
+      </section>
+
+      <ng-template #carouselPrev>
+        <div class="click-area"></div>
+      </ng-template>
+      <ng-template #carouselNext>
+        <div class="click-area"></div>
+      </ng-template>
+
+      <ng-template #carouselDot let-model>
+        <div class="ball bg-accent"></div>
+      </ng-template>
+    </ngx-light-carousel>
+  </ng-container>
+</div>

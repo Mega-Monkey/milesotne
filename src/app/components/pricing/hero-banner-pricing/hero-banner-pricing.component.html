@@ -1,0 +1,16 @@
+<div class="container-fluid py-3 py-lg-5 background">
+	<div class="row no-gutters" *ngIf="content">
+		<div class="col-8 mx-auto text-center mb-5">
+			<h1>{{ content.title }}</h1>
+		</div>
+		<div class="col-12 col-lg-8 mx-lg-auto mb-lg-5">
+			<!-- actually needs to be a plans object -->
+			<img [src]="content.image" alt="" class="hero-image" />
+		</div>
+		<div class="col-8 mx-auto text-center py-3 py-lg-5">
+			<a [routerLink]="content.linkDestination" routerLinkActive="router-link-active" class="btn btn-lg btn-white">
+				{{ content.linkTitle }}
+			</a>
+		</div>
+	</div>
+</div>

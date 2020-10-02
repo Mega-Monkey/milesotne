@@ -1,0 +1,76 @@
+<section *ngIf="content" class="relative d-flex new-slider mt-5 mt-md-0 flex-column justify-content-center">
+  <ngx-light-carousel [(current)]="currentIndex" [options]="options1" [data]="content.slides" class="wrapper c-accent">
+    <section ngx-light-carousel-container class="content">
+      <article ngx-light-carousel-item *ngFor="let slide of content.slides; let i = index">
+        <div class="item container-fluid  cursor-pointer min-50 w-100  {{ slide.backgroundColor }}">
+          <div class="h-100 row">
+            <div class="flex-column pb-5 pb-md-0 order-1 col-12 col-md-5 justify-content-center d-flex">
+              <div class="p-md-5">
+                <h3 class="mb-4">{{ slide.title }}</h3>
+                <div class="content" [innerHtml]="slide.content"></div>
+                <!-- <button class="btn px-4 btn-white">Check it out</button> -->
+              </div>
+            </div>
+            <div class="col-12 col-md-7 relative flex-column justify-content-center d-flex">
+              <img class="absolute-image" [src]="'/assets/' + slide.localAsset" />
+            </div>
+          </div>
+        </div>
+      </article>
+      <ng-template #infiniteContainer></ng-template>
+    </section>
+
+    <ng-template #carouselPrev>
+      <svg width="94" height="94" viewBox="0 0 94 94" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <g filter="url(#filter0_d)">
+          <circle cx="46" cy="45" r="40" fill="white" />
+        </g>
+        <path
+          fill-rule="evenodd"
+          clip-rule="evenodd"
+          d="M64.6932 43.3466H31.9201L38.743 36.5237L36.9115 34.6923L29.7146 41.9021C28.2058 43.4128 28.2058 45.8601 29.7146 47.3707L36.9115 54.5806L38.743 52.7491L31.9201 45.9262H64.6932V43.3466Z"
+          fill="#1D4B40"
+        />
+        <defs>
+          <filter id="filter0_d" x="0" y="0" width="94" height="94" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+            <feFlood flood-opacity="0" result="BackgroundImageFix" />
+            <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" />
+            <feOffset dx="1" dy="2" />
+            <feGaussianBlur stdDeviation="3.5" />
+            <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0" />
+            <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow" />
+            <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow" result="shape" />
+          </filter>
+        </defs>
+      </svg>
+    </ng-template>
+    <ng-template #carouselNext>
+      <svg width="94" height="94" viewBox="0 0 94 94" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <g filter="url(#filter0_d)">
+          <circle r="40" transform="matrix(-1 0 0 1 46 45)" fill="white" />
+        </g>
+        <path
+          fill-rule="evenodd"
+          clip-rule="evenodd"
+          d="M27.3068 43.3466H60.0799L53.257 36.5237L55.0885 34.6923L62.2854 41.9021C63.7942 43.4128 63.7942 45.8601 62.2854 47.3707L55.0885 54.5806L53.257 52.7491L60.0799 45.9262H27.3068V43.3466Z"
+          fill="#1D4B40"
+        />
+        <defs>
+          <filter id="filter0_d" x="0" y="0" width="94" height="94" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+            <feFlood flood-opacity="0" result="BackgroundImageFix" />
+            <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" />
+            <feOffset dx="1" dy="2" />
+            <feGaussianBlur stdDeviation="3.5" />
+            <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0" />
+            <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow" />
+            <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow" result="shape" />
+          </filter>
+        </defs>
+      </svg>
+    </ng-template>
+
+    <ng-template #carouselDot let-model>
+      <div class="ball bg-accent"></div>
+    </ng-template>
+  </ngx-light-carousel>
+</section>

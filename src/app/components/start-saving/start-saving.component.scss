@@ -1,0 +1,17 @@
+.font-15px {
+	font-size: 15px !important;
+}
+
+.text-purple {
+	color: #8513ba !important;
+}
+
+.left-border-1px-black {
+	border-left: black 1px solid;
+}
+
+@media screen and (max-width: 520px) {
+	* {
+		display: none;
+	}
+}

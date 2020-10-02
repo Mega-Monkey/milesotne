@@ -1,0 +1,10 @@
+<a [routerLink]="" routerLinkActive="router-link-active">
+  <div class="d-flex flex-column article-preview">
+    <div class="image mb-4">
+      <img src="{{ article.mobileImage ? article.mobileImage : article.mainImage }}" />
+    </div>
+    <h2 class="mb-3 pb-1">{{ article.title }}</h2>
+    <div class="excerpt truncate mb-2">{{ excerpt }}</div>
+    <div class="read-more">Read ></div>
+  </div>
+</a>

@@ -1,0 +1,21 @@
+<div class="page-home py-3 py-lg-5">
+  <ng-container *ngIf="homepage">
+    <div *ngFor="let block of homepage.blocks" [ngSwitch]="block._type" class="section">
+      <app-hero-banner *ngSwitchCase="'heroBanner'" [block]="block"></app-hero-banner>
+      <app-steps *ngSwitchCase="'steps'" [block]="block"></app-steps>
+      <app-product-feature-carousel *ngSwitchCase="'productFeatureCarousel'" [block]="block"></app-product-feature-carousel>
+      <ng-container *ngSwitchCase="'productFeature'">
+        <div class="container py-3">
+          <div class="row">
+            <app-product-feature [block]="block"></app-product-feature>
+          </div>
+        </div>
+      </ng-container>
+      <app-product-feature-list *ngSwitchCase="'productFeatureList'" [block]="block"></app-product-feature-list>
+      <app-list-blogs *ngSwitchCase="'listBlogs'" [block]="block"></app-list-blogs>
+      <app-testimonial-carousel *ngSwitchCase="'testimonials'" [block]="block"></app-testimonial-carousel>
+      <app-home-call-to-action *ngSwitchCase="'callToAction'" [block]="block"></app-home-call-to-action>
+      <div *ngSwitchDefault></div>
+    </div>
+  </ng-container>
+</div>

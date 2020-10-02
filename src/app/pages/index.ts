@@ -1,0 +1,5 @@
+export * from './blog/blog.component'
+export * from './industry/industry.component'
+export * from './article/article.component'
+export * from './home/home.component'
+export * from './pricing/pricing.component'
